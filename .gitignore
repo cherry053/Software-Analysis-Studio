@@ -1,2 +1,12 @@
 BUILD/
-build/
+build/CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+Testing/
+bin/
+lib/
+*.dot
+*.svf
+scratch/
