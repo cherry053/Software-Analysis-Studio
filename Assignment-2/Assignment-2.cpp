@@ -36,13 +36,71 @@ using namespace std;
 /// Print the path in the format "START->1->2->4->5->END", where -> indicate an ICFGEdge connects two ICFGNode IDs
 
 void ICFGTraversal::collectICFGPath(std::vector<unsigned> &path){
-    
+
+// prints the paths given in parameters
+std::string pathStr = "START";
+for (unsigned nodeID : path) {
+    pathStr += "->" + std::to_string(nodeID);
+
+}
+    pathStr += "->END";
+
+    std::cout<<pathStr<<std::endl;
+    paths.insert(pathStr);
+
 }
 
 
 /// TODO: Implement your context-sensitive ICFG traversal here to traverse each program path (once for any loop) from src to dst
-void ICFGTraversal::reachability(const ICFGNode *src, const ICFGNode *dst)
-{
-    
+void ICFGTraversal::reachability(const ICFGNode *src, const ICFGNode *dst){
+    std::pair<const ICFGNode*, CallStack> currentState = std::make_pair(src, callstack);
+
+    if(visited.find(currentState) != visited.end()){
+        return;
+    }
+    visited.insert(currentState);
+
+    path.push_back(src->getId());
+
+    if(src == dst){
+        collectICFGPath(path);
+
+    }
+
+    for(const ICFGEdge *edge : src->getOutEdges()){
+
+        if(const CallCFGEdge *callEdge = SVFUtil::dyn_cast<CallCFGEdge>(edge)){
+            callstack.push_back(callEdge->getSrcNode());
+            reachability(edge->getDstNode(), dst);
+            callstack.pop_back();
+        } 
+        else if(const RetCFGEdge *retEdge = SVFUtil::dyn_cast<RetCFGEdge>(edge)){
+            
+            if(!callstack.empty() && callstack.back() == retEdge->getCallSite()){
+                const ICFGNode *top = callstack.back();
+                callstack.pop_back();
+                reachability(edge->getDstNode(), dst);
+                callstack.push_back(top);
+            }
+            else if (callstack.empty()){
+                reachability(edge->getDstNode(), dst);
+
+            }
+        
+        }
+        else if (SVFUtil::dyn_cast<IntraCFGEdge>(edge)){
+            reachability(edge->getDstNode(), dst);
+        }
+            
+        
+    }
+    visited.erase(currentState);
+    path.pop_back();
 
 }
+
+// There are hidden test cases up to 10 you can see 3, ensure to use cpp API keys for this
+// Some test cases might have multiple paths, ensure to print all the paths in the format mentioned above
+// Ensure you understand the Inter and Intra CFG node ensure you are traversing the ICFG and not CFG, you can use the API provided in the SVF framework to traverse the ICFG
+// Ensure you use special handling strategies
+// SVFUtil::dyn_cast - Use this cos it does not exit your code when running 

@@ -6,9 +6,9 @@
             "type": "cppdbg",
             "request": "launch",
             // Change this to the executable of your current lab or assignment.
-            "program": "${workspaceFolder}/bin/hello",
+            "program": "${workspaceFolder}/bin/ass2",
             "args": [],
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/Assignment-2/test-exes/test1.ll",
             "preLaunchTask": "C/C++: cpp build active file",
             "MIMode": "gdb",
             "setupCommands": [
