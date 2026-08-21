@@ -55,9 +55,10 @@ for (unsigned nodeID : path) {
 void ICFGTraversal::reachability(const ICFGNode *src, const ICFGNode *dst){
     std::pair<const ICFGNode*, CallStack> currentState = std::make_pair(src, callstack);
 
-    if(visited.find(currentState) != visited.end()){
+    if(visited.count(currentState)){
         return;
     }
+ 
     visited.insert(currentState);
 
     path.push_back(src->getId());
