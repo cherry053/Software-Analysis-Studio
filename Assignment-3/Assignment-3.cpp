@@ -42,9 +42,47 @@ using namespace std;
 /// line 1 for sources  "{ api1 api2 api3 }"
 /// line 2 for sinks    "{ api1 api2 api3 }"
 void ICFGTraversal::readSrcSnkFromFile(const string& filename) {
-	
+	std::ifstream inFile(filename);
+	if(!inFile.is_open()){
+		checker_source_api = {"source"};
+		checker_sink_api = {"sink"};
+		return;
+	}
 
+	std::string line;
+	int braceLineNo = 0;
+	while(std::getline(inFile, line)){
+		size_t open = line.find('{');
+		size_t close = line.rfind('}');
+		if(open == std::string::npos || close == std::string::npos || close <= open){
+		continue;
+		}
+	std::string label = line.substr(0, open);
+	bool isSink;
+	if(label.find("sink") != std::string::npos) {
+		isSink = true;
+	}
+	else if(label.find("source") != std::string::npos){
+		isSink = false;
+	} else {
+		isSink = (braceLineNo != 0);
+	}
+	
+	std::istringstream iss(line.substr(open + 1, close - open -1));
+	std::string api;
+		while(iss >> api){
+			if(isSink){
+				checker_sink_api.insert(api);
+			} else{
+				checker_source_api.insert(api);
+			}
+		}
+		++braceLineNo;
+	}
+	inFile.close();
 }
+
+
 
 /// TODO: Convert each collected ICFG path into a string and insert it into
 /// `std::set<std::string> paths`. The path should use the format
@@ -126,6 +164,12 @@ void ICFGTraversal::reachability(const ICFGNode* src, const ICFGNode* snk) {
 /// q <--GEP, fld-- p    =>  for each o ∈ pts(p) : pts(q) = pts(q) ∪ {o.fld}
 /// pts(q) denotes the points-to set of q
 void AndersenPTA::solveWorklist() {
+	while(!isWorklistEmpty()){
+		NodeID pId = popFromWorklist();
+		ConstraintNode* p = consCG->getConstraintNode(pId);
+
+		const PointsTo pts = getPts(pId);
+	}
 	
 }
 
@@ -134,6 +178,26 @@ void AndersenPTA::solveWorklist() {
 /// snk instruction:  sink(actualParm,...);
 /// return true if actualRet is aliased with any parameter at the snk node (e.g., via ander->alias(..,..))
 bool ICFGTraversal::aliasCheck(const CallICFGNode* src, const CallICFGNode* snk) {
+	const RetICFGNode* srcRet = src->getRetICFGNode();
+	if(srcRet == nullptr){
+		return false;
+	}
+	const SVFVar* actualRet = srcRet->getActualRet();
+	if(actualRet == nullptr){
+		return false;
+	}
+	NodeID srcID = actualRet->getId();
+
+	for(const SVFVar* actualParm : snk->getActualParms()){
+		if(actualParm == nullptr){
+			continue;
+		}
+
+		if(ander->alias(srcID, actualParm->getId()) != SVF::AliasResult::NoAlias){
+			return true;
+		}
+	}
+
 	return false;
 }
 
