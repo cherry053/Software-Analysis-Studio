@@ -51,6 +51,17 @@ void ICFGTraversal::readSrcSnkFromFile(const string& filename) {
 /// "START->1->2->4->5->END", where each pair of adjacent node IDs is connected
 /// by an ICFG edge, similar to Assignment 2.
 void ICFGTraversal::collectICFGPath(std::vector<unsigned>& path) {
+	
+std::string pathStr = "START";
+for(unsigned nodeID : path){
+	pathStr += "->" + std::to_string(nodeID);
+
+}
+
+	pathStr += "->END";
+
+	std::cout <<pathStr<<std::endl;
+	paths.insert(pathStr);
 
 }
 
@@ -59,6 +70,50 @@ void ICFGTraversal::collectICFGPath(std::vector<unsigned>& path) {
 /// including loops and qualified by its callstack, should only be traversed
 /// once using `visited`. Call `collectICFGPath` for every reachable path.
 void ICFGTraversal::reachability(const ICFGNode* src, const ICFGNode* snk) {
+	std::pair<const ICFGNode*, CallStack> currentState = std::make_pair(src, callstack);
+
+    if(visited.count(currentState)){
+        return;
+    }
+ 
+    visited.insert(currentState);
+
+    path.push_back(src->getId());
+
+    if(src == snk){
+        collectICFGPath(path);
+
+    }
+
+    for(const ICFGEdge *edge : src->getOutEdges()){
+
+        if(const CallCFGEdge *callEdge = SVFUtil::dyn_cast<CallCFGEdge>(edge)){
+            callstack.push_back(callEdge->getSrcNode());
+            reachability(edge->getDstNode(), snk);
+            callstack.pop_back();
+        } 
+        else if(const RetCFGEdge *retEdge = SVFUtil::dyn_cast<RetCFGEdge>(edge)){
+            
+            if(!callstack.empty() && callstack.back() == retEdge->getCallSite()){
+                const ICFGNode *top = callstack.back();
+                callstack.pop_back();
+                reachability(edge->getDstNode(), snk);
+                callstack.push_back(top);
+            }
+            else if (callstack.empty()){
+                reachability(edge->getDstNode(), snk);
+
+            }
+        
+        }
+        else if (SVFUtil::dyn_cast<IntraCFGEdge>(edge)){
+            reachability(edge->getDstNode(), snk);
+        }
+            
+        
+    }
+    visited.erase(currentState);
+    path.pop_back();
 
 }
 
