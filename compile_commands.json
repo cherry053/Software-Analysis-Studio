@@ -1,0 +1,74 @@
+[
+{
+  "directory": "/home/SVF-tools/Software-Analysis-Studio/HelloWorld",
+  "command": "/usr/bin/c++ -DEXPERIMENTAL_KEY_INSTRUCTIONS -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -isystem /home/SVF-tools/SVF/llvm-21.1.0.obj/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf-llvm/include -isystem /home/SVF-tools/SVF/Debug-build/include -isystem /home/SVF-tools/SVF/z3.obj/include -fPIC -std=gnu++17 -O0 -fno-rtti -Wno-deprecated -Werror -g   -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-exceptions -o CMakeFiles/hello.dir/hello.cpp.o -c /home/SVF-tools/Software-Analysis-Studio/HelloWorld/hello.cpp",
+  "file": "/home/SVF-tools/Software-Analysis-Studio/HelloWorld/hello.cpp",
+  "output": "HelloWorld/CMakeFiles/hello.dir/hello.cpp.o"
+},
+{
+  "directory": "/home/SVF-tools/Software-Analysis-Studio/CodeGraph",
+  "command": "/usr/bin/c++ -DEXPERIMENTAL_KEY_INSTRUCTIONS -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -isystem /home/SVF-tools/SVF/llvm-21.1.0.obj/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf-llvm/include -isystem /home/SVF-tools/SVF/Debug-build/include -isystem /home/SVF-tools/SVF/z3.obj/include -fPIC -std=gnu++17 -O0 -fno-rtti -Wno-deprecated -Werror -g   -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-exceptions -o CMakeFiles/codegraph.dir/CodeGraph.cpp.o -c /home/SVF-tools/Software-Analysis-Studio/CodeGraph/CodeGraph.cpp",
+  "file": "/home/SVF-tools/Software-Analysis-Studio/CodeGraph/CodeGraph.cpp",
+  "output": "CodeGraph/CMakeFiles/codegraph.dir/CodeGraph.cpp.o"
+},
+{
+  "directory": "/home/SVF-tools/Software-Analysis-Studio/Assignment-1",
+  "command": "/usr/bin/c++ -DEXPERIMENTAL_KEY_INSTRUCTIONS -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -isystem /home/SVF-tools/SVF/llvm-21.1.0.obj/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf-llvm/include -isystem /home/SVF-tools/SVF/Debug-build/include -isystem /home/SVF-tools/SVF/z3.obj/include -fPIC -std=gnu++17 -O0 -fno-rtti -Wno-deprecated -Werror -g   -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-exceptions -o CMakeFiles/ass1.dir/Assignment-1.cpp.o -c /home/SVF-tools/Software-Analysis-Studio/Assignment-1/Assignment-1.cpp",
+  "file": "/home/SVF-tools/Software-Analysis-Studio/Assignment-1/Assignment-1.cpp",
+  "output": "Assignment-1/CMakeFiles/ass1.dir/Assignment-1.cpp.o"
+},
+{
+  "directory": "/home/SVF-tools/Software-Analysis-Studio/Assignment-1",
+  "command": "/usr/bin/c++ -DEXPERIMENTAL_KEY_INSTRUCTIONS -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -isystem /home/SVF-tools/SVF/llvm-21.1.0.obj/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf-llvm/include -isystem /home/SVF-tools/SVF/Debug-build/include -isystem /home/SVF-tools/SVF/z3.obj/include -fPIC -std=gnu++17 -O0 -fno-rtti -Wno-deprecated -Werror -g   -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-exceptions -o CMakeFiles/ass1.dir/test-exes/Test.cpp.o -c /home/SVF-tools/Software-Analysis-Studio/Assignment-1/test-exes/Test.cpp",
+  "file": "/home/SVF-tools/Software-Analysis-Studio/Assignment-1/test-exes/Test.cpp",
+  "output": "Assignment-1/CMakeFiles/ass1.dir/test-exes/Test.cpp.o"
+},
+{
+  "directory": "/home/SVF-tools/Software-Analysis-Studio/Assignment-2",
+  "command": "/usr/bin/c++ -DEXPERIMENTAL_KEY_INSTRUCTIONS -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -isystem /home/SVF-tools/SVF/llvm-21.1.0.obj/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf-llvm/include -isystem /home/SVF-tools/SVF/Debug-build/include -isystem /home/SVF-tools/SVF/z3.obj/include -fPIC -std=gnu++17 -O0 -fno-rtti -Wno-deprecated -Werror -g   -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-exceptions -o CMakeFiles/ass2.dir/Assignment-2.cpp.o -c /home/SVF-tools/Software-Analysis-Studio/Assignment-2/Assignment-2.cpp",
+  "file": "/home/SVF-tools/Software-Analysis-Studio/Assignment-2/Assignment-2.cpp",
+  "output": "Assignment-2/CMakeFiles/ass2.dir/Assignment-2.cpp.o"
+},
+{
+  "directory": "/home/SVF-tools/Software-Analysis-Studio/Assignment-2",
+  "command": "/usr/bin/c++ -DEXPERIMENTAL_KEY_INSTRUCTIONS -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -isystem /home/SVF-tools/SVF/llvm-21.1.0.obj/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf-llvm/include -isystem /home/SVF-tools/SVF/Debug-build/include -isystem /home/SVF-tools/SVF/z3.obj/include -fPIC -std=gnu++17 -O0 -fno-rtti -Wno-deprecated -Werror -g   -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-exceptions -o CMakeFiles/ass2.dir/test-exes/Test.cpp.o -c /home/SVF-tools/Software-Analysis-Studio/Assignment-2/test-exes/Test.cpp",
+  "file": "/home/SVF-tools/Software-Analysis-Studio/Assignment-2/test-exes/Test.cpp",
+  "output": "Assignment-2/CMakeFiles/ass2.dir/test-exes/Test.cpp.o"
+},
+{
+  "directory": "/home/SVF-tools/Software-Analysis-Studio/Assignment-3",
+  "command": "/usr/bin/c++ -DEXPERIMENTAL_KEY_INSTRUCTIONS -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/home/SVF-tools/Software-Analysis-Studio/Assignment-3/.. -isystem /home/SVF-tools/SVF/llvm-21.1.0.obj/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf-llvm/include -isystem /home/SVF-tools/SVF/Debug-build/include -isystem /home/SVF-tools/SVF/z3.obj/include -fPIC -std=gnu++17 -O0 -fno-rtti -Wno-deprecated -Werror -g   -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-exceptions -o CMakeFiles/assign-3.dir/Assignment-3.cpp.o -c /home/SVF-tools/Software-Analysis-Studio/Assignment-3/Assignment-3.cpp",
+  "file": "/home/SVF-tools/Software-Analysis-Studio/Assignment-3/Assignment-3.cpp",
+  "output": "Assignment-3/CMakeFiles/assign-3.dir/Assignment-3.cpp.o"
+},
+{
+  "directory": "/home/SVF-tools/Software-Analysis-Studio/Assignment-3",
+  "command": "/usr/bin/c++ -DEXPERIMENTAL_KEY_INSTRUCTIONS -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -I/home/SVF-tools/Software-Analysis-Studio/Assignment-3/.. -isystem /home/SVF-tools/SVF/llvm-21.1.0.obj/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf-llvm/include -isystem /home/SVF-tools/SVF/Debug-build/include -isystem /home/SVF-tools/SVF/z3.obj/include -fPIC -std=gnu++17 -O0 -fno-rtti -Wno-deprecated -Werror -g   -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-exceptions -o CMakeFiles/ass3.dir/test.cpp.o -c /home/SVF-tools/Software-Analysis-Studio/Assignment-3/test.cpp",
+  "file": "/home/SVF-tools/Software-Analysis-Studio/Assignment-3/test.cpp",
+  "output": "Assignment-3/CMakeFiles/ass3.dir/test.cpp.o"
+},
+{
+  "directory": "/home/SVF-tools/Software-Analysis-Studio/Assignment-4",
+  "command": "/usr/bin/c++ -DEXPERIMENTAL_KEY_INSTRUCTIONS -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -isystem /home/SVF-tools/SVF/llvm-21.1.0.obj/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf-llvm/include -isystem /home/SVF-tools/SVF/Debug-build/include -isystem /home/SVF-tools/SVF/z3.obj/include -fPIC -std=gnu++17 -O0 -fno-rtti -Wno-deprecated -Werror -g   -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-exceptions -o CMakeFiles/assign-4.dir/Assignment-4.cpp.o -c /home/SVF-tools/Software-Analysis-Studio/Assignment-4/Assignment-4.cpp",
+  "file": "/home/SVF-tools/Software-Analysis-Studio/Assignment-4/Assignment-4.cpp",
+  "output": "Assignment-4/CMakeFiles/assign-4.dir/Assignment-4.cpp.o"
+},
+{
+  "directory": "/home/SVF-tools/Software-Analysis-Studio/Assignment-4",
+  "command": "/usr/bin/c++ -DEXPERIMENTAL_KEY_INSTRUCTIONS -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -isystem /home/SVF-tools/SVF/llvm-21.1.0.obj/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf-llvm/include -isystem /home/SVF-tools/SVF/Debug-build/include -isystem /home/SVF-tools/SVF/z3.obj/include -fPIC -std=gnu++17 -O0 -fno-rtti -Wno-deprecated -Werror -g   -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-exceptions -o CMakeFiles/assign-4.dir/Z3Mgr.cpp.o -c /home/SVF-tools/Software-Analysis-Studio/Assignment-4/Z3Mgr.cpp",
+  "file": "/home/SVF-tools/Software-Analysis-Studio/Assignment-4/Z3Mgr.cpp",
+  "output": "Assignment-4/CMakeFiles/assign-4.dir/Z3Mgr.cpp.o"
+},
+{
+  "directory": "/home/SVF-tools/Software-Analysis-Studio/Assignment-4",
+  "command": "/usr/bin/c++ -DEXPERIMENTAL_KEY_INSTRUCTIONS -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -isystem /home/SVF-tools/SVF/llvm-21.1.0.obj/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf-llvm/include -isystem /home/SVF-tools/SVF/Debug-build/include -isystem /home/SVF-tools/SVF/z3.obj/include -fPIC -std=gnu++17 -O0 -fno-rtti -Wno-deprecated -Werror -g   -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-exceptions -o CMakeFiles/assign-4.dir/Z3SSEMgr.cpp.o -c /home/SVF-tools/Software-Analysis-Studio/Assignment-4/Z3SSEMgr.cpp",
+  "file": "/home/SVF-tools/Software-Analysis-Studio/Assignment-4/Z3SSEMgr.cpp",
+  "output": "Assignment-4/CMakeFiles/assign-4.dir/Z3SSEMgr.cpp.o"
+},
+{
+  "directory": "/home/SVF-tools/Software-Analysis-Studio/Assignment-4",
+  "command": "/usr/bin/c++ -DEXPERIMENTAL_KEY_INSTRUCTIONS -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -isystem /home/SVF-tools/SVF/llvm-21.1.0.obj/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf/include -isystem /home/SVF-tools/SVF/Debug-build/include/../../svf-llvm/include -isystem /home/SVF-tools/SVF/Debug-build/include -isystem /home/SVF-tools/SVF/z3.obj/include -fPIC -std=gnu++17 -O0 -fno-rtti -Wno-deprecated -Werror -g   -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D_GNU_SOURCE -DEXPERIMENTAL_KEY_INSTRUCTIONS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-exceptions -o CMakeFiles/ass4.dir/test-sse.cpp.o -c /home/SVF-tools/Software-Analysis-Studio/Assignment-4/test-sse.cpp",
+  "file": "/home/SVF-tools/Software-Analysis-Studio/Assignment-4/test-sse.cpp",
+  "output": "Assignment-4/CMakeFiles/ass4.dir/test-sse.cpp.o"
+}
+]

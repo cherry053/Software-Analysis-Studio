@@ -155,6 +155,15 @@ void ICFGTraversal::reachability(const ICFGNode* src, const ICFGNode* snk) {
 
 }
 
+
+
+// TODO: Implement the helper function, processAllAddr to assist with ensuring each pts to set is not null
+// void AndersenPTA::processAllAddr() {
+// 	for(ConstraintGraph::const_iterator it = consCG->begin(), eit=consCG->end(); it != eit; ++it){
+		
+// 	}
+// }
+
 // TODO: Implement your Andersen's Algorithm here
 /// The solving rules are as follows:
 /// p <--Addr-- o        =>  pts(p) = pts(p) ∪ {o}
@@ -164,13 +173,70 @@ void ICFGTraversal::reachability(const ICFGNode* src, const ICFGNode* snk) {
 /// q <--GEP, fld-- p    =>  for each o ∈ pts(p) : pts(q) = pts(q) ∪ {o.fld}
 /// pts(q) denotes the points-to set of q
 void AndersenPTA::solveWorklist() {
+
+	for(ConstraintGraph::const_iterator it = consCG->begin(), eit = consCG->end(); it != eit; ++it){
+		ConstraintNode* node = it->second;
+		for(ConstraintEdge* edge : node->getAddrInEdges()){
+			const AddrCGEdge* addr = SVFUtil::cast<AddrCGEdge>(edge);
+			NodeID p = addr->getDstID();
+			NodeID o = addr->getSrcID();
+			if(addPts(p, o)){
+				pushIntoWorklist(p);
+			}
+		}
+
+	}
+	
 	while(!isWorklistEmpty()){
 		NodeID pId = popFromWorklist();
 		ConstraintNode* p = consCG->getConstraintNode(pId);
 
 		const PointsTo pts = getPts(pId);
+
+		for(NodeID o : pts){
+			for(ConstraintEdge* edge : p->getStoreInEdges()){
+				NodeID q = edge->getSrcID();
+				if(addCopyEdge(q, o)){
+					pushIntoWorklist(q);
+				}
+
+			}
+
+			for(ConstraintEdge* edge : p->getLoadOutEdges()){
+				NodeID r = edge->getDstID();
+				if(addCopyEdge(o, r)){
+					pushIntoWorklist(o);
+				}
+			}
+		}
+
+		for(ConstraintEdge* edge : p->getDirectOutEdges()){
+			if(const NormalGepCGEdge* gep = SVFUtil::dyn_cast<NormalGepCGEdge>(edge)){
+
+				NodeID q = gep->getDstID();
+				for(NodeID o : pts){
+					NodeID fldObj = getGepObjVar(o, gep->getConstantFieldIdx());
+					if(unionPts(q, fldObj)){
+						pushIntoWorklist(q);
+					}
+				}
+			} 
+			else if(SVFUtil::isa<VariantGepCGEdge>(edge)){
+				NodeID q = edge->getDstID();
+				for(NodeID o : pts){
+					if(unionPts(q, consCG->getFIObjVar(o))){
+						pushIntoWorklist(q);
+					}
+				}
+			}
+			else {
+				NodeID x = edge->getDstID();
+				if(unionPts(x, pts)){
+					pushIntoWorklist(x);
+				}
+			}
+		}
 	}
-	
 }
 
 /// TODO: Checking aliases of the two variables at source and sink. For example:

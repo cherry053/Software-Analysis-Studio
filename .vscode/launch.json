@@ -8,7 +8,7 @@
             // Change this to the executable of your current lab or assignment.
             "program": "${workspaceFolder}/bin/ass3",
             "args": [],
-            "cwd": "${workspaceFolder}/Assignment-3/test-exes/test1.ll",
+            "cwd": "${workspaceFolder}/Assignment-3/Tests/testcases/pta/test1.11",
             "preLaunchTask": "C/C++: cpp build active file",
             "MIMode": "gdb",
             "setupCommands": [
